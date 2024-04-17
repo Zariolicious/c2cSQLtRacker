@@ -1,23 +1,22 @@
 import mysql.connector
 
- 
 
-connection = mysql.connector.connect(user = 'root', database = 'example', password = 'Zariolicious534')
+connection = mysql.connector.connect(
+    user = 'root', 
+    database = 'example', 
+    password = 'Zariolicious534'
+    )
 
- 
 
 cursor = connection.cursor()
 
+testQuery = ('SELECT * FROM ex_table') 
+
+cursor.execute(testQuery)
+
+for item in cursor:
+    print(item)
  
-
-addData = ("INSERT INTO ex_table (id, name, amount) VALUES (3,'Zener',5)")
- 
-
-cursor.execute(addData)
-
- 
-
-connection.commit()
 
 cursor.close()
 
