@@ -10,14 +10,54 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
+'''
+Use for printing table information now function print_all_accounts
 testQuery = ('SELECT * FROM ex_table') 
 
 cursor.execute(testQuery)
+'''
 
-for item in cursor:
-    print(item)
- 
 
+def fetch_user(id):
+    cursor.execute('SELECT * FROM ex_table WHERE id=%s''',(id,))
+    return cursor.fetchall()
+
+def update_amount(amount, id):
+    cursor.execute('UPDATE ex_table SET amount=%s WHERE id=%s' % (amount, id))
+    connection.commit()
+
+def insert_new_account(name, ammount, id, pinnumber):
+    query = "INSERT INTO ex_table (name, ammount, id, pinnumber) VALUES (%s, %s,%s,%s)"
+    values = (name, amount, id, pinnumber)
+    cursor.execute(query, values)
+    connection.commit()
+
+def cleanup():
+    cursor.close()
+    connection.close()
+
+def print_all_accounts():
+    query = ('SELECT * FROM ex_table')
+
+    cursor.execute(query)
+    for item in cursor:
+        print(item)
+
+def cleanup():
+    cursor.close()
+    connection.close()
+
+print(fetch_user(1)) #Checks user 1's details before update 
+update_amount(500, 1)
+print(fetch_user(1)) #Verify user 1's amount was updated
+
+insert_new_account('someone else', 700,) 
+
+print
+
+'''
+Turned into function for use inside bank.py for simplicity
 cursor.close()
 
 connection.close()
+'''
