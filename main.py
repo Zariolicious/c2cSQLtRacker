@@ -26,10 +26,10 @@ def update_amount(amount, id):
     cursor.execute('UPDATE ex_table SET amount=%s WHERE id=%s' % (amount, id))
     connection.commit()
 
-def insert_new_account(name, ammount, id, pinnumber):
-    query = "INSERT INTO ex_table (name, ammount, id, pinnumber) VALUES (%s, %s,%s,%s)"
+def insert_new_account(name, amount, id, pinnumber):
+    query = "INSERT INTO ex_table (name, amount, id, pinnumber) VALUES (%s, %s,%s,%s)"
     values = (name, amount, id, pinnumber)
-    cursor.execute(query, values)
+    cursor.execute(query, values) 
     connection.commit()
 
 def cleanup():
@@ -43,6 +43,10 @@ def print_all_accounts():
     for item in cursor:
         print(item)
 
+#def login(name, pinnumber):
+   # cursor.execute('SELECT * FROM ex_table WHERE name=%s AND pinnumber=%s', (name, pinnumber))
+   # return cursor.fetchall()
+
 def cleanup():
     cursor.close()
     connection.close()
@@ -51,9 +55,7 @@ print(fetch_user(1)) #Checks user 1's details before update
 update_amount(500, 1)
 print(fetch_user(1)) #Verify user 1's amount was updated
 
-insert_new_account('someone else', 700,) 
-
-print
+insert_new_account(4, 'someone else', 700, '7484') 
 
 '''
 Turned into function for use inside bank.py for simplicity
