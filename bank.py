@@ -49,7 +49,7 @@ def register():
     Label(register_screen, text = "Pinnumber", font=f).grid(row=2,sticky=W,)
     Label(register_screen, text = "Unique ID", font=f).grid(row=3,sticky=W,)
 
-    #Entries for user to input info for login
+    #Entries for user to input info for registering
     Entry(regiser_screen,textvarible=temp_name).grid(row=1, column=0)
     Entry(regiser_screen,textvarible=temp_pinnumber).grid(row=2, column=0)
     Entry(regiser_screen,textvarible=temp_id).grid(row=3, column=0)
