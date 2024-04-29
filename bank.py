@@ -21,25 +21,8 @@ def menu():
 
 print("Hello! Welcome to Z Banking!")
 menu()
-''' 
-If software was only command line
-userInput = int(input("What would you like to do?: ")).
-if userInput == 4:
-    name = input("Enter your name: ")
-    pinnumber = input("Please make a personal pin")
-    amount = 0
-    insert_new_account()
-    
-    elif userInput == 7:
-        menu()  
 
-    elif userInput == 1: 
-        pinnumber == int(input"Please enter your pin number: ")
-        for numbers in pinnumber:
-            pinnumber += 1
-        if pinnumber = 4:
-            print(f"You have {amount} in your bank account ")
-'''
+
 #GUI ----------------------------------------------------------------
 
 ws = Tk()
