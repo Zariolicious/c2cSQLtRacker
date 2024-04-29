@@ -8,21 +8,6 @@ from tkinter import messagebox
 
 pinnumber = 0
 
-
-def menu():
-    print("----------------------------------------------------------------")
-    print("1. Check account balance")
-    print("2. Deposit funds ")
-    print("3. Withdraw funds")
-    print("4. Create account")
-    print("5. Delete an account")
-    print("6. Modify account details")
-    print("7. Menu")
-
-print("Hello! Welcome to Z Banking!")
-menu()
-
-
 #GUI ----------------------------------------------------------------
 
 ws = Tk()
