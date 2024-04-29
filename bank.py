@@ -42,6 +42,8 @@ def register():
     register_screen = Toplevel(ws)
     register_screen.title("Register")
 
+
+    #Labels
     Label(register_screen, text = "Please enter your detials below to register", font=f).grid(row=0,sticky=N,pady=10)
     Label(register_screen, text = "Name", font=f).grid(row=1,sticky=W,)
     Label(register_screen, text = "Pinnumber", font=f).grid(row=2,sticky=W,)
